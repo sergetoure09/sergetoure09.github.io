@@ -47,24 +47,25 @@ var abou = {
         if (val != 1) {
             this.current += val
             console.log(this.current)
-            document.querySelector(this.current_id).innerHTML = this.current
+            document.querySelector(this.current_id).textContent = this.current
 
         } else {
             this.current = 0
             console.log(this.current)
-            document.querySelector(this.current_id).innerHTML = this.current
+            document.querySelector(this.current_id).textContent = this.current
             this.hold(players)
         }
     },
     updateActual: function () {
         this.actual += this.current
         this.current = 0
-        document.querySelector(this.actual_id).innerHTML = this.actual
-        if (parseInt(this.actual) >= 10) {
+        document.querySelector(this.actual_id).textContent = this.actual
+        if (parseInt(this.actual) >= 100) {
             console.log("hey hey hye")
-            document.querySelector(this.winner_id).innerHTML = "You Win !!!"
+            document.querySelector(this.winner_id).textContent = "You Win !!!"
         } else {
             this.hold(players)
+            document.querySelector("#dice").style.display='none' 
         }
 
 
@@ -81,13 +82,15 @@ var abou = {
             } else {
                 player.activePlayer = !this.activePlayer
                 this.current = 0
-                document.querySelector(this.current_id).innerHTML = this.current
-                document.querySelector(this.div_id).classList.remove("player--1")
-                document.querySelector(this.content_id).classList.remove('player__active')
-                document.querySelector(player.div_id).classList.add("player--1")
-                document.querySelector(player.content_id).classList.add('player__active')
+                document.querySelector(this.current_id).textContent = this.current
+                document.querySelector(this.div_id).classList.toggle("player--1")
+                document.querySelector(this.content_id).classList.toggle('player__active')
+                document.querySelector(player.div_id).classList.toggle("player--1")
+                document.querySelector(player.content_id).classList.toggle('player__active')
                 console.log(`${this.name} is holding...`)
                 console.log(`${player.name} is playing...`)
+                document.querySelector("#dice").style.display='none'
+                    
             }
         }
 
@@ -104,7 +107,7 @@ var rokya = {
     current_id: "#current-2",
     actual_id: "#actual-2",
     div_id: "#player-2",
-    winner_id: "#winner-1",
+    winner_id: "#winner-2",
     content_id: "#content-2",
     activePlayer: false
 
@@ -127,7 +130,7 @@ function checkActivePlayer(playerList) {
 }
 
 function roll_controller(player) {
-
+    document.querySelector("#dice").style.display='inline-block'
     player.updateCurrent(displayRollImg(ctx, rollImg(rollDice(1, 6))))
 
 
@@ -179,17 +182,21 @@ var newGame = document.querySelector("#btn-new")
 var num
 var players = [abou, rokya]
 //var startingPlayer=abou
-roll.addEventListener('click', function () {
+
+
+roll.addEventListener('click', function () {    
     roll_controller(checkActivePlayer(players))
 })
 hold.addEventListener('click', function () {
     hold_controller(checkActivePlayer(players))
 })
 newGame.addEventListener('click', function () {
+    document.querySelector("#dice").style.display='none'
     for (var player of players) {
         player.actual = 0
-        document.querySelector(player.actual_id).innerHTML = player.actual
-        document.querySelector(player.winner_id).innerHTML = ""
+        document.querySelector(player.actual_id).textContent = player.actual
+        document.querySelector(player.current_id).textContent = player.actual
+        document.querySelector(player.winner_id).textContent = ""
     }
 })
 console.log(abou)
