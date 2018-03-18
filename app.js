@@ -40,6 +40,7 @@ var abou = {
     current_id: "#current-1",
     actual_id: "#actual-1",
     div_id: "#player-1",
+    content_id: "#content-1",
     winner_id: "#winner-1",
 
     updateCurrent: function (val) {
@@ -82,7 +83,9 @@ var abou = {
                 this.current = 0
                 document.querySelector(this.current_id).innerHTML = this.current
                 document.querySelector(this.div_id).classList.remove("player--1")
+                document.querySelector(this.content_id).classList.remove('player__active')
                 document.querySelector(player.div_id).classList.add("player--1")
+                document.querySelector(player.content_id).classList.add('player__active')
                 console.log(`${this.name} is holding...`)
                 console.log(`${player.name} is playing...`)
             }
@@ -102,6 +105,7 @@ var rokya = {
     actual_id: "#actual-2",
     div_id: "#player-2",
     winner_id: "#winner-1",
+    content_id: "#content-2",
     activePlayer: false
 
 }
@@ -115,8 +119,10 @@ rokya.hold = abou.hold
 function checkActivePlayer(playerList) {
     for (var player of playerList) {
         if (player.activePlayer) {
+           
             return player
         }
+       
     }
 }
 
