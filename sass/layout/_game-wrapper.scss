@@ -1,0 +1,8 @@
+.game-wrapper{
+    @include clearfix;
+    width: 65%;
+    height: 65%;
+    @include center;
+    background-color: white;
+    box-shadow: .3rem 0.3rem 0rem 8rem rgba(#333,.6);
+}

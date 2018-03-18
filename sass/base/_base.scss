@@ -1,0 +1,26 @@
+*,
+*::after,
+*::before{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+
+
+
+html{
+    height: 100%;
+    font-size: 62.5%;
+}
+
+
+body {
+   height: 100%;   
+  position: relative;
+  font-family: $base-font;
+  background-image: url("back.jpg");
+  background-size: 125%;
+  //background-position: center;
+  text-align: center;
+}

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Work+Sans:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+      <link rel="stylesheet" href="./style.css">
+    <title>myGame</title>
+</head>
+<body>
+
+    <div class="game-wrapper">
+        <div id="btn-new"  class="btn btn--new">
+            <i class="material-icons md-30">all_inclusive</i><span class="btn__text">NEW GAME</span>
+        </div>
+        <div id="btn-roll" class="btn btn--roll">
+                <i class="material-icons md-30">3d_rotation</i><span class="btn__text">ROLL DICE</span>
+            </div>
+            <div id="btn-hold"  class="btn btn--hold">
+                    <i class="material-icons md-30">compare_arrows</i><span class="btn__text">HOLD</span>
+                </div>
+                <div class="btn btn--dice">
+                        <img src="./dice-4.png" alt="dice image" class="dice" id="dice" />
+                    </div>
+        <div id="player-1" class="player player--1">
+                <span id="winner-1" class="winner"></span>
+            <div class="player__content">
+                <p class="player__name">ABOU</p><span class="player__active"></span>
+                <p id="actual-1" class="player__actual-score">0</p>
+                <div class="player__cumul-score">
+                    <p>current</p>
+                    <span id="current-1">0</span>
+                </div>
+            </div>
+        </div>
+        <div id="player-2" class="player">
+            <span id="winner-2" class="winner"></span>
+            <div class="player__content">
+                <p class="player__name">ROKYA</p><span class="player__active"></span>
+                <p id="actual-2" class="player__actual-score">0</p>
+                <div class="player__cumul-score">
+                    <p>current</p>
+                    <span id="current-2">0</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script type="text/javascript" src="./app.js">
+    
+    </script>
+</body>
+</html>

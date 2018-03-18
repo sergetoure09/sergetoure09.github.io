@@ -1,0 +1,180 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0; }
+
+html {
+  height: 100%;
+  font-size: 62.5%; }
+
+body {
+  height: 100%;
+  position: relative;
+  font-family: "Work Sans", sans-serif;
+  background-image: url("back.jpg");
+  background-size: 125%;
+  text-align: center; }
+
+.material-icons.md-18 {
+  font-size: 18px; }
+
+.material-icons.md-24 {
+  font-size: 24px; }
+
+.material-icons.md-36 {
+  font-size: 36px; }
+
+.material-icons.md-48 {
+  font-size: 48px; }
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg); }
+  to {
+    transform: rotate(360deg); } }
+
+.player {
+  float: left;
+  width: 50%;
+  height: 100%;
+  position: relative; }
+  .player__active::after {
+    content: "";
+    display: inline-block;
+    border: 7px solid #e91e63;
+    border-radius: 50px; }
+  .player--1 {
+    background-color: rgba(224, 225, 225, 0.5); }
+  .player__content {
+    width: 60%;
+    height: 65%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); }
+  .player__name {
+    display: inline-block;
+    text-transform: uppercase;
+    font-weight: 100;
+    font-size: 4rem;
+    margin-right: 2rem; }
+  .player__actual-score {
+    font-size: 10rem;
+    font-weight: 100;
+    color: #e91e63; }
+  .player__cumul-score {
+    width: 10rem;
+    height: 7rem;
+    background-color: #e91e63;
+    margin: 0 auto;
+    margin-top: 10rem;
+    padding: 1rem; }
+    .player__cumul-score p {
+      text-transform: uppercase;
+      font-size: .7rem;
+      font-weight: 500; }
+    .player__cumul-score span {
+      font-size: 3rem;
+      font-weight: 200;
+      color: #fff; }
+
+.btn {
+  width: 13rem;
+  position: absolute;
+  z-index: 100;
+  padding-bottom: .5em;
+  cursor: pointer; }
+  .btn::after {
+    content: "";
+    display: block;
+    clear: both; }
+  .btn:hover > i {
+    animation: rotate .3s ease-out; }
+  .btn i {
+    display: inline-block;
+    float: left;
+    color: red; }
+  .btn__text {
+    display: inline-block;
+    float: left;
+    font-size: 1.5rem;
+    margin-left: 15px;
+    margin-top: 2px; }
+  .btn--new {
+    top: 2rem;
+    left: 50%;
+    transform: translateX(-55%); }
+    .btn--new:hover {
+      border-bottom: 3px solid #e91e63; }
+  .btn--roll {
+    top: 35rem;
+    left: 50%;
+    transform: translateX(-55%); }
+    .btn--roll:hover {
+      border-bottom: 3px solid #e91e63; }
+  .btn--hold {
+    top: 40rem;
+    left: 50%;
+    transform: translateX(-55%); }
+    .btn--hold:hover {
+      border-bottom: 3px solid #e91e63; }
+  .btn--dice {
+    top: 15rem;
+    left: 50%;
+    transform: translateX(-55%);
+    transition: all .2s; }
+    .btn--dice:hover {
+      transform: translateX(-55%) scale(1.1); }
+
+.dice {
+  display: inline-block;
+  width: 10rem;
+  height: 10rem;
+  box-shadow: 0.3rem 0.3rem 1rem rgba(51, 51, 51, 0.5); }
+
+.winner {
+  display: inline-block;
+  font-weight: 200;
+  font-size: 5rem;
+  color: #e91e63;
+  margin-top: 4rem; }
+
+.container {
+  max-width: 114rem;
+  margin: 5rem auto; }
+  .container::after {
+    content: "";
+    display: block;
+    clear: both; }
+  .container [class^="col-"] {
+    float: left; }
+    .container [class^="col-"]:not(:last-child) {
+      margin-right: 8rem; }
+  .container .row {
+    width: 100%; }
+    .container .row:not(:last-child) {
+      margin-bottom: 3rem; }
+    .container .row .col-1-of-4 {
+      width: calc((100% - 3 * 8rem)/4); }
+    .container .row .col-2-of-4 {
+      width: calc(((100% - 3 * 8rem)/4) * 2 + 1 * 8rem); }
+    .container .row .col-3-of-4 {
+      width: calc(((100% - 3 * 8rem)/4) * 3 + 2 * 8rem); }
+    .container .row .col-4-of-4 {
+      width: calc(((100% - 3 * 8rem)/4) * 4 + 3 * 8rem); }
+
+.game-wrapper {
+  width: 65%;
+  height: 65%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  box-shadow: 0.3rem 0.3rem 0rem 8rem rgba(51, 51, 51, 0.6); }
+  .game-wrapper::after {
+    content: "";
+    display: block;
+    clear: both; }

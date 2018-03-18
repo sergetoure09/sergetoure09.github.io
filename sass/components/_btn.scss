@@ -1,0 +1,82 @@
+.btn{
+    @include clearfix;
+    //border: 1px solid red;
+    width: 13rem;
+    position: absolute;
+    z-index: 100;
+    padding-bottom: .5em;
+
+    cursor: pointer;
+
+
+    &:hover>i{
+        //transform: rotate(180deg);
+        animation: rotate .3s ease-out ;
+    }
+  
+    
+
+
+    i{
+        display: inline-block;
+        float: left;
+        color: red;
+       // transition:all 2s infinite;
+      
+    }
+
+
+    &__text{
+        
+        display: inline-block;
+        float: left;
+        font-size: 1.5rem;
+       // border: 1px solid green;
+        margin-left: 15px;
+        margin-top: 2px;
+
+
+    }
+
+
+
+    &--new{
+        top: 2rem;
+        left: 50%;
+        transform: translateX(-55%);
+        @include hover
+
+    }
+    &--roll{
+        top: 35rem;
+        left: 50%;
+        transform: translateX(-55%);
+        @include hover
+
+    }
+    &--hold{
+        top: 40rem;
+        left: 50%;
+        transform: translateX(-55%);
+        @include hover
+
+    }
+    &--dice{
+        top: 15rem;
+        left: 50%;
+        transform: translateX(-55%);
+        transition: all .2s;
+    //    / animation: rotate 1s;
+
+        &:hover{
+            transform: translateX(-55%) scale(1.1)
+        }
+
+
+
+    }
+
+   
+
+    
+}
