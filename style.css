@@ -13,8 +13,6 @@ body {
   height: 100%;
   position: relative;
   font-family: "Work Sans", sans-serif;
-  background-image: url("back.jpg");
-  background-size: 125%;
   text-align: center; }
 
 .material-icons.md-18 {
