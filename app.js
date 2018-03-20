@@ -60,9 +60,11 @@ var abou = {
         this.actual += this.current
         this.current = 0
         document.querySelector(this.actual_id).textContent = this.actual
-        if (parseInt(this.actual) >= 100) {
+        if (parseInt(this.actual) >= 10) {
             console.log("hey hey hye")
             document.querySelector(this.winner_id).textContent = "You Win !!!"
+           setTimeout(function(){init()},3000)
+           //document.querySelector("#dice").textContent="Please roll dice" 
         } else {
             this.hold(players)
             document.querySelector("#dice").style.display='none' 
@@ -183,14 +185,7 @@ var num
 var players = [abou, rokya]
 //var startingPlayer=abou
 
-
-roll.addEventListener('click', function () {    
-    roll_controller(checkActivePlayer(players))
-})
-hold.addEventListener('click', function () {
-    hold_controller(checkActivePlayer(players))
-})
-newGame.addEventListener('click', function () {
+function init(){
     document.querySelector("#dice").style.display='none'
     for (var player of players) {
         player.actual = 0
@@ -198,6 +193,15 @@ newGame.addEventListener('click', function () {
         document.querySelector(player.current_id).textContent = player.actual
         document.querySelector(player.winner_id).textContent = ""
     }
+}
+roll.addEventListener('click', function () {    
+    roll_controller(checkActivePlayer(players))
+})
+hold.addEventListener('click', function () {
+    hold_controller(checkActivePlayer(players))
+})
+newGame.addEventListener('click', function () {
+   init()
 })
 console.log(abou)
 console.log(rokya)
