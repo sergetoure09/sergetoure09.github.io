@@ -60,7 +60,7 @@ var abou = {
         this.actual += this.current
         this.current = 0
         document.querySelector(this.actual_id).textContent = this.actual
-        if (parseInt(this.actual) >= 10) {
+        if (parseInt(this.actual) >= 100) {
             console.log("hey hey hye")
             document.querySelector(this.winner_id).textContent = "You Win !!!"
            setTimeout(function(){init()},3000)
