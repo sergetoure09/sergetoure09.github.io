@@ -103,7 +103,7 @@ var abou = {
 
 
 var rokya = {
-    name: "Rokya",
+    name: "Maimouna",
     actual: 0,
     current: 0,
     current_id: "#current-2",
